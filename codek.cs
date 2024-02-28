@@ -31,3 +31,9 @@
             return hashCode;
         }
     }
+   public override string ToString()
+    {
+        int[] verParts = { Major, Minor, Patch };
+        string ver = string.Join(".", verParts);
+        return $"{ver}{(IsPreRelease ? "-" : string.Empty)}{PreRelease}{Meta}";
+    }
